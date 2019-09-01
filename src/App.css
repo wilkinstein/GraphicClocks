@@ -1,3 +1,80 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+  font-family: sans-serif;
+}
+
+* {
+  transition: all 1s;
+}
+
+a {
+  text-decoration: none;
+  color: White;
+}
+
+h1 {
+  font-size: 2em;
+}
+
+header > div {
+  width:100%;
+  display: flex;
+  align-items: center;
+}
+
+header > div > div {
+  display: flex;
+}
+
+main {
+  display: flex;
+  width: 100%;
+  height: -webkit-fill-available;
+}
+
+main > div {
+  width: 100%;
+}
+
+.aboutWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow-y: auto;
+    height:100%;
+}
+
+.aboutWrapper p, .aboutWrapper h1 {
+  margin: 15px;
+}
+
+.aboutWrapper p {
+  font-weight: 100;
+  width: 80%;
+  line-height: 18px;
+  letter-spacing: 1px;
+  text-align: left;
+  font-size: 14px;
+}
+
 .App {
   text-align: center;
 }
@@ -10,17 +87,131 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  height:50px;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  justify-content: flex-start;
 }
 
 .App-link {
   color: #61dafb;
+}
+
+.clockShell {
+  display: flex;
+  width: 100%;
+  height: -webkit-fill-available;
+}
+
+.clockWrapper {
+  width:80%;
+  background-color: black;
+  position: relative;
+}
+
+.clockNext {
+  width: 20%;
+  background-color: grey;
+  align-items: center;
+  padding: 5vh 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.clockNext > a {
+  font-size: 20px;
+  line-height: 25px;
+}
+
+.clockList:hover ~ .dropDownMenu, .dropDownMenu:hover {
+  display: block;
+}
+
+.dropDownMenu {
+  display: none;
+  position: absolute;
+  top: 50px;
+  z-index: 10;
+  background-color: #282c34;
+  padding: 10px;
+}
+
+.dropDownMenu  li {
+  font-size: 14px;
+  line-height: 25px;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.dropDownMenu  li:hover {
+  background-color: white;
+  color: black;
+}
+
+.headerHome {
+  margin-left: 10px;
+}
+
+.headerHome > a {
+  color: White;
+  text-decoration: none;
+}
+
+.headerTime {
+  letter-spacing: 2px;
+  position: fixed;
+  right: 0;
+}
+
+.menuItems {
+  margin: auto;
+  margin-right: 100px;
+}
+
+.menuItems > a, .menuItems > p {
+  padding: 17px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.playOptionsForm {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width:50%;
+    margin:auto;
+}
+
+.playOptionsForm > select, .playOptionsForm > input {
+  width: 300px;
+  height: 60px;
+  font-size: 20px;
+  font-weight: bold;
+  text-indent: 30px;
+}
+
+.playOptionsForm > hr {
+    width: 30%;
+    background-color: white;
+    height: 1px;
+  }
+
+.playOptionsForm > input {
+  background-color: #282c34;
+  color: white;
+  margin:20px 0;
+  text-indent: 0;
+}
+
+.playOptionsForm > select {
+  margin:25px 0;
 }
 
 @keyframes App-logo-spin {
@@ -30,4 +221,38 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+
+
+@media screen and (max-width: 668px) {
+
+  header > div {
+    flex-direction: column;
+  }
+
+  main {
+    overflow-y: auto;
+  }
+
+  .headerHome {
+    margin-top: 10px;
+  }
+
+  .clockNext {
+  width: 100%;
+  height: 50px;
+  position: fixed;
+  bottom: 0;
+ }
+
+ .clockWrapper {
+  width: 100%;
+ }
+
+ .menuItems > a, .menuItems > p {
+  font-size: 14px;
+  padding: 10px;
+ }
+
 }
