@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <style>
+      * {
+          margin:0;
+          padding: 0;
+      }
+      .fit {
+        max-width: 100%;
+        max-height: 100%;
+        position: relative;
+        height: auto;
+      }
+      .center {
+        display: block;
+        margin: auto;
+      }
+      html, body {
+        width:  100%;
+        height: 100%;
+        margin: 0;
+      }
+      #canvass {
+        max-width: 100%;
+        max-height: 100vh;
+        position: absolute;
+        height: auto;
+        display: block;
+      }
+      #canvas {
+        position: absolute;
+        top:0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin:auto;
+      }
+    </style>
+  </head>
+  <body>
+
+    <div>
+        <img id="clockface" src="./data/circles2circletrans320.png" width="320" height="320" style="display:none">
+        <img id="starclock" src="./data/starclock320.png" width="320" height="320" style="display:none">
+    </div>
+
+    <!-- Does this cause centering? -->
+    <!-- <canvas id="canvas" class = "center fit" width="800" height="500" style="background-color:#ABC" position="absolute"></canvas> -->
+
+    
+      <canvas id="canvas" width="1600" height="900" style="background-color:#ABC" ></canvas>
+
+      <canvas id="bgCanvas" width="320" height="320" style="display:none" style="background-color:#8FF" ></canvas>
+
+    <script src="./src/AbstractClockClass.js"> </script>
+    <script src="./src/SimpleClockClass.js"> </script>
+    <script src="./src/BaseClockClass.js"> </script>
+    <script src="./src/mainFuncs.js"> </script>
+    <script src="./src/main.js"> </script>
+
+  </body>
+</html>
